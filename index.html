@@ -28,7 +28,7 @@
 
     <!--Booking Section-->
     <main class="main-content container">
-        <div class="booking-form">
+        <div id="bookingArea" class="booking-form">
             <h3>Booking Flights</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
@@ -97,12 +97,18 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="bookNow" class="btn-style">Book Now</button>
         </div>
 
         <div class="booking-content">
             <h1>discover <br> around the world</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise voluptatibus quam</p>
+        </div>
+
+        <div id="popupBox" class="popup-box">
+            <h1>Congratulations!!! your ticket has been successfully Booked</h1>
+            <div id="btn1" class="btn1">Ok</div>    
+        </div>
         </div>
     </section>
 
@@ -159,6 +165,20 @@
             const TicketCount = parseInt(TicketInput.value);
             return TicketCount
         }
+
+        document.getElementById("bookNow").addEventListener('click', function() {
+            const bookingForm = document.getElementById('bookingArea');
+            bookingForm.style.display = 'none';
+            const popupBox =  document.getElementById('popupBox');
+            popupBox.style.display = 'block';
+        })
+
+        document.getElementById("btn1").addEventListener('click', function() {
+            const popupBox =  document.getElementById('popupBox');
+            popupBox.style.display = 'none';
+            const bookingForm = document.getElementById('bookingArea');
+            bookingForm.style.display = 'block';
+        })
     </script>
 
 </body>
